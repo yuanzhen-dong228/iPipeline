@@ -1,3 +1,4 @@
+#!/bin/bash -ilex
 pipeline {
     agent none
 	stages {
@@ -7,7 +8,7 @@ pipeline {
 	                agent { label "master" }
 	                steps {
 	                    echo "在 agent test1 上执行的并行任务 1."
-	                    "ifconfig"
+	                    sh "ifconfig"
 	                    sleep 10
 	                }
 	            }
@@ -15,7 +16,7 @@ pipeline {
 	                agent { label "master" }
 	                steps {
 	                    echo "在 agent test2 上执行的并行任务 2."
-	                    "pwd"
+	                    sh "pwd"
 	                    sleep 8
 	                }
 	            }
